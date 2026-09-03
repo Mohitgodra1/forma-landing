@@ -1,4 +1,4 @@
-export async function sendContactEmail({ name, email, message, services }) {
+async function sendContactEmail({ name, email, message, services }) {
   const response = await fetch('https://api.brevo.com/v3/smtp/email', {
     method: 'POST',
     headers: {
@@ -16,7 +16,7 @@ export async function sendContactEmail({ name, email, message, services }) {
           <h2>New Website Inquiry</h2>
           <p><strong>Name:</strong> ${name}</p>
           <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Services Interested In:</strong> ${services ? services.join(', ') : 'None'}</p>
+          <p><strong>Services:</strong> ${services ? services.join(', ') : 'None'}</p>
           <p><strong>Message:</strong></p>
           <p style="background: #f4f4f4; padding: 15px; border-radius: 5px;">${message}</p>
         </div>
@@ -27,3 +27,5 @@ export async function sendContactEmail({ name, email, message, services }) {
   if (!response.ok) throw new Error("Failed to send email");
   return await response.json();
 }
+
+module.exports = { sendContactEmail };
