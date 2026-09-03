@@ -29,7 +29,7 @@ export const HEADLINE_ACCENT_WORD = "products";
 
 // ---- Contact card ----
 export const FORM_HEADING = "Say hello! 👋";
-export const CONTACT_EMAIL = "hello@forma.co";
+export const CONTACT_EMAIL = "mayankkk35@gmail.com";
 
 // Label shown above the contact email / social icons row.
 export const CONTACT_BAR_LABEL = "Tell me your vision";
